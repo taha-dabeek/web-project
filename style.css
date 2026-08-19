@@ -1,0 +1,29 @@
+/* This file is on purpose very plain.
+   Part of your mark is for making the page look like YOURS.
+   Change the colours, the fonts, the spacing, the layout. */
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+#results {
+  list-style: none;
+  padding: 0;
+}
+
+#results li {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#status {
+  color: #555;
+}

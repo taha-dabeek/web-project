@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "student_id": "PUT YOUR STUDENT NUMBER HERE",
+    "topic": "PUT YOUR TOPIC HERE"
+  },
+  "items": [
+    {
+      "name": "Safety test <b>bold</b>",
+      "note": "This must appear on the page as plain text"
+    },
+    {
+      "name": "Example one",
+      "note": "Delete this and write your own items"
+    },
+    {
+      "name": "Example two",
+      "note": "Every item needs a name and a note"
+    }
+  ]
+}
