@@ -22,10 +22,17 @@
         <input type="search" id="q" placeholder='Try "glass" or "ceramic"' />
         <button id="go" type="button">Search</button>
       </div>
+      <h2>Leave feedback</h2>
+      <form action="feedback.php" method="post">
+  	<label for="message">Your comment:</label>
+  	<input type="text" id="message" name="message" maxlength="200">
+  	<button type="submit">Send</button>
+      </form>
 
       <p id="status"></p>
 
       <ul id="results"></ul>
+
     </main>
 
     <footer>
