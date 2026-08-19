@@ -1,7 +1,7 @@
 {
   "meta": {
-    "student_id": "PUT YOUR STUDENT NUMBER HERE",
-    "topic": "PUT YOUR TOPIC HERE"
+    "student_id": "12505287",
+    "topic": "Hebron glass and ceramic crafts"
   },
   "items": [
     {
@@ -9,12 +9,32 @@
       "note": "This must appear on the page as plain text"
     },
     {
-      "name": "Example one",
-      "note": "Delete this and write your own items"
+      "name": "Hebron blue glass vase",
+      "note": "A rounded vase in the deep cobalt blue Hebron is known for, shaped by hand while still hot."
     },
     {
-      "name": "Example two",
-      "note": "Every item needs a name and a note"
+      "name": "Hand-blown glass bracelet",
+      "note": "Thin glass bangles twisted and looped by a glassblower, sold in bundles of bright colours."
+    },
+    {
+      "name": "Hebron milk glass bowl",
+      "note": "An opaque white bowl made using an older recipe, often decorated with swirled colour trails."
+    },
+    {
+      "name": "Ceramic bowl with cobalt pattern",
+      "note": "A wheel-thrown bowl painted with a hand-drawn geometric pattern before glazing."
+    },
+    {
+      "name": "Ceramic tile mosaic",
+      "note": "Small painted tiles arranged into a repeating pattern, often used on courtyard walls."
+    },
+    {
+      "name": "Glassblowing furnace",
+      "note": "The wood or gas-fired furnace that keeps molten glass workable throughout the day."
+    },
+    {
+      "name": "Painted ceramic plate",
+      "note": "A flat serving plate hand-painted with floral or geometric motifs and fired twice."
     }
   ]
 }
