@@ -60,6 +60,19 @@ I added the generated files to the project and then tested the complete project.
 
 I used AI to help build the user interface and styling and to connect the frontend files with the functionality .
 
+
+## 4. Implementing the bonus feature (feedback.php)
+
+**What I asked AI:**
+
+"Implement the bonus feature: sends data with POST and prints it back safely with htmlspecialchars."
+**What AI answered/did:**
+The AI sent me a feedback.php file and a form to add to index.html.
+**What I did with the AI's output:**
+Used it as it is and it worked.
+**Why I used AI:**
+I used AI to help implement the bonus POST form and confirm htmlspecialchars was applied correctly to protect against XSS.
+
 ---
 
 ## Final Testing
