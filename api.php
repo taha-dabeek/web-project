@@ -1,27 +1,55 @@
 <?php
-// api.php - this code runs on the SERVER.
-// The browser never sees these lines. It only sees what you echo.
-// You write this file yourself. Hints name the tools, not the answer.
+// api.php — my tiny web service
+// Reads data.json, filters items by the search word, and sends back JSON.
+//
+// My rule (from Table B): "Starts with"
+//   Instead of keeping items whose name just CONTAINS the search word,
+//   I only keep items whose name STARTS WITH the search word.
 
-// TODO 1: read data.json and turn it into a PHP array.
-//         Hint: file_get_contents("data.json") then json_decode($raw, true)
+header('Content-Type: application/json');
 
-// TODO 2: read the search word from the address.
-//         Hint: $_GET["q"] - it may not be there at all, so check first.
+// --- Read the data file -----------------------------------------------
+$dataFile = __DIR__ . '/data.json';
+$raw = file_get_contents($dataFile);
+$data = json_decode($raw, true);
 
-// TODO 3: if the search word is longer than 30 characters, stop here:
-//         send status 400 and a JSON object with an "error" message.
-//         Hint: http_response_code(400)
+// --- Read the search word ----------------------------------------------
+$q = isset($_GET['q']) ? $_GET['q'] : '';
 
-// TODO 4: if there is no search word, keep all items.
-//         If there is one, keep only the items whose name contains it.
-//         The search must ignore capital letters.
-//         Hint: stripos($name, $q) !== false
+// --- Rule: search word too long → 400 -----------------------------------
+if (strlen($q) > 30) {
+    http_response_code(400);
+    echo json_encode([
+        'error' => 'Search word is too long. Please use 30 characters or fewer.'
+    ]);
+    exit;
+}
 
-// TODO 5: apply YOUR personal rule from the table in the handout.
+$items = $data['items'];
 
-// TODO 6: send the answer back as JSON, in this shape:
-//         { "meta": {...}, "count": <how many items you are sending>, "items": [...] }
-//         Copy "meta" straight from data.json.
-//         Hint: header("Content-Type: application/json");
-//               echo json_encode($out);
+// --- Filter: empty q keeps everything; otherwise apply my rule ---------
+if ($q !== '') {
+    $qLower = strtolower($q);
+    $filtered = [];
+
+    foreach ($items as $item) {
+        $nameLower = strtolower($item['name']);
+
+        // "Starts with" rule: keep only names that START WITH the search
+        // word (case-insensitive), not just any name that contains it.
+        if (strpos($nameLower, $qLower) === 0) {
+            $filtered[] = $item;
+        }
+    }
+
+    $items = $filtered;
+}
+
+// --- Build and send the response ----------------------------------------
+$response = [
+    'meta'  => $data['meta'],
+    'count' => count($items),
+    'items' => $items
+];
+
+echo json_encode($response);
