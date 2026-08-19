@@ -1,36 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Tiny Web Service</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hebron Glass &amp; Ceramic Crafts</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Hebron Glass &amp; Ceramic Crafts</h1>
+      <p>
+        A small search tool for the glassblowing and pottery traditions of
+        Hebron.
+      </p>
+    </header>
 
-  <header>
-    <h1>CHANGE THIS TITLE</h1>
-    <p>CHANGE THIS: one short line about your topic.</p>
-  </header>
+    <main>
+      <!-- Do NOT change these four id values: q, go, status, results. -->
+      <div class="search-bar">
+        <label for="q">Search</label>
+        <input type="search" id="q" placeholder='Try "glass" or "ceramic"' />
+        <button id="go" type="button">Search</button>
+      </div>
 
-  <main>
-    <!-- You may change the look of this page freely.
-         Do NOT change these four id values: q, go, status, results.
-         The marking program looks for them. -->
+      <p id="status"></p>
 
-    <label for="q">Search</label>
-    <input type="search" id="q" placeholder="Type a word">
-    <button id="go" type="button">Search</button>
+      <ul id="results"></ul>
+    </main>
 
-    <p id="status"></p>
+    <footer>
+      <p>Taha Dabeek  &middot; Student number: 12505287</p>
+    </footer>
 
-    <ul id="results"></ul>
-  </main>
-
-  <footer>
-    <p>CHANGE THIS: your name and student number.</p>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
